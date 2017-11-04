@@ -35,8 +35,37 @@ exports.setBudget = ((req, res) => {
   }));
 });
 
+/**
+ * GET request that allows you to pass in the customer Id as a query string param.
+ */
 exports.getBudget = ((req, res) => {
+  const schema = Joi.object().keys({
+    customer_id: Joi.string().required()
+  });
 
+  Joi.validate(req.query, schema, ((err, result) => {
+    if (err) {
+      res.status(500).send(`Failed schema validation: ${err.stack}`);
+    }
+    else {
+      //TODO: mix in the amount spent of this budget
+      //TODO: mix in the merchant code rather than the mcc
+      const query = 'SELECT * FROM budget WHERE customer_id = ?';
+      req.driver.query({
+        sql: query,
+        values: [ req.query.customer_id ]
+      }, ((err, result, fields) => {
+        if (err) {
+          res.status(500).send(`Query error: ${err.stack}`);
+        }
+        else {
+          //console.log('Results = ' + JSON.stringify(result, null, 4));
+          let friendlyResult = result;
+          res.json(friendlyResult);
+        }
+      }));
+    }
+  }));
 });
 
 module.exports = exports;
