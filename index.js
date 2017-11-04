@@ -2,6 +2,8 @@
 
 const dotenv = require('dotenv').load();
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 
 const options = {};
@@ -9,7 +11,8 @@ const router = express.Router([options]);
 
 const controllers = require('./controllers/');
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   const driver = require('./drivers/mysql.js');
@@ -26,6 +29,14 @@ router.get('/', (req, res) => {
 
 app.get('/authorizedUsers', (req, res) => {
   controllers.authorizedUsers(req, res); 
+});
+
+app.post('/budget', (req, res) => {
+  controllers.budget.setBudget(req, res);
+});
+
+app.get('/budget', (req, res) => {
+  controllers.budget.getBudget(req, res);
 });
 
 app.use('/', router);
