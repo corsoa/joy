@@ -1,13 +1,16 @@
 'use strict';
 
 const dotenv = require('dotenv').load();
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 const options = {};
 const router = express.Router([options]);
 
 const controllers = require('./controllers/');
+
+app.use(express.static('public'))
+
 app.use((req, res, next) => {
   const driver = require('./drivers/mysql.js');
   req.driver = driver;
