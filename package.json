@@ -24,5 +24,8 @@
     "joi": "^13.0.1",
     "mysql": "^2.15.0",
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "fast-csv": "^2.4.1"
   }
 }
