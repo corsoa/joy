@@ -1,0 +1,108 @@
+{
+	"id": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+	"name": "Capital One",
+	"description": "",
+	"order": [
+		"4cabaa47-909e-9296-c177-5f834dc46cc8",
+		"f463d5f4-94c6-3f31-234c-172e3430e94b",
+		"7828b6ca-af4c-2c11-c852-ffecbc5ce5ee"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1509803976349,
+	"owner": "772457",
+	"public": false,
+	"requests": [
+		{
+			"id": "4cabaa47-909e-9296-c177-5f834dc46cc8",
+			"headers": "",
+			"headerData": [],
+			"url": "",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+			"data": null,
+			"dataMode": "params",
+			"name": "Accounts",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509803977246,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "7828b6ca-af4c-2c11-c852-ffecbc5ce5ee",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/budget?customer_id=100730000",
+			"queryParams": [
+				{
+					"key": "customer_id",
+					"value": "100730000",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET Budgets for a customer",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509833245324,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f463d5f4-94c6-3f31-234c-172e3430e94b",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/budget",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Set a new budget",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509831933149,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n\t\"max_consume\": \"100.00\",\n\t\"mcc\": \"10\",\n\t\"customer_id\": \"101\"\n}"
+		}
+	]
+}
