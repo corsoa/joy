@@ -1,6 +1,25 @@
 .container {
   display: block;
 }
+.authUsername {
+  position: relative;
+  top: 50px;
+  left: 5px;
+  background: white;
+  padding: 2px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: blue;
+}
+.mainProfileWrapper {
+  text-align:center;
+}
+.mainProfileName {
+  top: 70px;
+  position: relative;
+  color: blue;
+  font-weight: bold;
+}
 
 .section {
   height: 100vh;

@@ -87,6 +87,10 @@ router.get('/merchant-categories', ((req, res) => {
   controllers.merchant.getMerchantCategories(req, res);
 }));
 
+router.get('/list-accounts', ((req, res) => {
+  controllers.accounts.listAccounts(req, res);
+}));
+
 router.get('/igoal', function(req, res) {
   res.render('goal');
 });
