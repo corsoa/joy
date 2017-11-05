@@ -38,7 +38,7 @@ exports.setBudget = ((req, res) => {
   }));
 });
 
-exports.getSpentBudget = ((customer_id, date_from, date_to) => {
+exports.getTransactions = ((customer_id, date_from, date_to) => {
   return new Promise((resolve, reject) => {
     const requestOptions = {
       url: `${process.env.BASE_URL}/transactions`,
@@ -54,15 +54,12 @@ exports.getSpentBudget = ((customer_id, date_from, date_to) => {
         date_to: date_to.toString()
       }
     };
-    console.log(requestOptions);
     request(requestOptions, ((err, res, body) => {
       if (err) {
         reject(err);
       }
       else {
         if (res.statusCode === 200) {
-          console.log('body');
-          console.log(body);
           resolve(body);
         }
         else {
@@ -73,23 +70,27 @@ exports.getSpentBudget = ((customer_id, date_from, date_to) => {
   });
 });
 
-exports.getAllocatedBudget = ((customer_id, date_from, date_to) => {
+exports.getAllocatedBudget = ((customer_id, date_from, date_to, mcc_cache) => {
   return new Promise((resolve, reject) => {
-    //TODO: mix in the amount spent of this budget
-    const query = `SELECT b.*,
-      (SELECT mcc_segment_description FROM merchants WHERE mcc_segment = b.mcc  GROUP BY mcc_segment_description) AS mcc_segment_description
+    const query = `SELECT b.*
       FROM budget b 
       WHERE customer_id = ?`;
     driver.query({
       sql: query,
       values: [ customer_id ]
-    }, ((err, result, fields) => {
+    }, ((err, results, fields) => {
       if (err) {
         reject(new Error(`Query error: ${err.stack}`));
       }
       else {
         console.log('query result');
-       resolve(result); 
+        //mix in the mcc "human readable" names from the middleware
+       results.forEach((row) => {
+         if (mcc_cache[row.mcc]) {
+           row.mcc_segment_description = mcc_cache[row.mcc];
+         }
+       });
+       resolve(results); 
       }
     }));
   });
@@ -101,6 +102,44 @@ exports.getOnlyMerchantNames = ((rawResults) => {
     merchantList.push(transactionDetail.merchant_name);
   });
   return merchantList;
+});
+
+/**
+ * This gets a hash of the passed in list of merchants
+ * and returns their corresponding MCC segment description
+ */
+exports.getMCCSegmentsFromNames = ((nameList, mcc_cache) => {
+  return new Promise((resolve, reject) => {
+    // this is dumb but it works.
+    let inClause = '';
+    for (let i = 0; i < nameList.length; i += 1) {
+      if (i !== nameList.length -1) {
+        inClause += '?, '; 
+      }
+      else {
+        inClause += '?';
+      }
+    }
+    const sqlQuery = `SELECT mcc_description, mcc_segment FROM merchants WHERE mcc_description IN (${inClause})`;
+    driver.query({
+      sql: sqlQuery,
+      values: nameList
+    }, ((err, results) => {
+      if (err) {
+        reject(new Error(`QueryError: ${err.stack}`));
+      }
+      else {
+        let merchantHash = {};
+        results.forEach((row) => {
+          merchantHash[row.mcc_description] = {};
+          if (mcc_cache[row.mcc_segment]) {
+            merchantHash[row.mcc_description].mcc_segment_description = mcc_cache[row.mcc_segment];
+          }
+        });
+        resolve(merchantHash);
+      }
+    }));
+  });
 });
 
 /**
@@ -122,14 +161,38 @@ exports.getBudget = ((req, res) => {
       const customer_id = req.query.customer_id;
       const date_from = req.query.date_from;
       const date_to = req.query.date_to;
-      Promise.all([exports.getSpentBudget(customer_id, date_from, date_to), exports.getAllocatedBudget(customer_id, date_from, date_to)]).then((allResults) => {
-        console.log('all results');
+      Promise.all([exports.getTransactions(customer_id, date_from, date_to), exports.getAllocatedBudget(customer_id, date_from, date_to, req.mcc_cache)]).then((allResults) => {
         const onlyMerchantNames = exports.getOnlyMerchantNames(allResults[0]);
         // make a query to determine the mapping between the merchant names and the merchant 
-        // process the result of the spent budget
-        console.log(JSON.stringify(allResults, null, 4));
-        //temporary...
-        res.send(allResults[1]);
+        exports.getMCCSegmentsFromNames(onlyMerchantNames, req.mcc_cache).then((mccInfo) => {
+          let spendingByMccSegment = {};
+          // process the result of the spent budget
+          allResults[0][0].customers[0].transactions.forEach((transaction) => {
+            let mccSegmentDescription = '';
+            if (mccInfo[transaction.merchant_name]) {
+              mccSegmentDescription = mccInfo[transaction.merchant_name].mcc_segment_description;
+            }
+            else {
+              mccSegmentDescription = 'Uncategorized';
+            }
+            if (!spendingByMccSegment[mccSegmentDescription]) {
+              spendingByMccSegment[mccSegmentDescription] = 0;
+            }
+            spendingByMccSegment[mccSegmentDescription] += transaction.amount;
+          });
+          //finally, iterate over the "budget" data and from the mapping, figure out how much they spent against their budget for this mcc.
+          allResults[1].forEach((budgetRecord) => {
+            if (spendingByMccSegment[budgetRecord.mcc_segment_description]) {
+              budgetRecord.spentAmount = spendingByMccSegment[budgetRecord.mcc_segment_description];
+            }
+            else {
+              budgetRecord.spentAmount = 0;
+            }
+          });
+          res.send(allResults[1]);
+        }).catch((err) => {
+          res.status(500).send(err.stack);  
+        });
       }).catch((err) => {
         console.error(err);
         res.status(500).send(err);
