@@ -3,6 +3,8 @@
 const dotenv = require('dotenv').load();
 const express = require('express');
 const bodyParser = require('body-parser');
+const path    = require("path");
+const request = require('request');
 
 const app = express();
 
@@ -11,9 +13,15 @@ const router = express.Router([options]);
 
 const controllers = require('./controllers/');
 
-app.use(express.static('public'));
-app.use(bodyParser.json());
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine', 'ejs');
 
+//app.use(express.static('public'));
+app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/css", express.static(__dirname + '/public/css'));
+app.use("/images", express.static(__dirname + '/public/images'));
+
+app.use(bodyParser.json());
 app.use((req, res, next) => {
   const driver = require('./drivers/mysql.js');
   req.driver = driver;
@@ -56,7 +64,25 @@ app.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-  res.send('Hello World!')
+
+    var options = { method: 'POST',
+      url: 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/accounts',
+      headers: 
+       { 'postman-token': '36e11e3b-52a1-f527-9a53-6f6446d40b85',
+         'cache-control': 'no-cache',
+         'content-type': 'application/json' },
+      body: { account_id: 100700000 },
+      json: true };
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+      console.log(body);
+    });
+  const renderOpts = {
+    root: 'public'
+  };
+  res.render('index', renderOpts);
 })
 
 app.get('/authorizedUsers', (req, res) => {
