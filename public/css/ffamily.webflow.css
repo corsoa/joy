@@ -1,6 +1,7 @@
 .container {
   display: block;
 }
+
 .visible-link {
   opacity: 100 !important;
 }
@@ -90,10 +91,6 @@
   background-position: 0px 0px;
   background-size: 227px;
 }
-
-.imgpadre {
-  background-image: url('../images/father.png');
-}
 .imgmadre {
   background-image: url('../images/mother.png');
 
@@ -122,10 +119,19 @@
   transition: opacity 292ms ease;
 }
 
+
 .imgpadre:hover, .imgmadre:hover {
   -webkit-transform: scale(1.17);
   -ms-transform: scale(1.17);
   transform: scale(1.17);
+}
+
+.imgpadre.imghomeone {
+  background-color: #fff;
+  background-image: url('../images/father.png');
+  background-position: 50% 50%;
+  background-size: 150px;
+  background-repeat: no-repeat;
 }
 
 .imghijo {
@@ -241,6 +247,7 @@
 }
 
 .form-block {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -248,13 +255,38 @@
   margin-right: auto;
   margin-left: auto;
   clear: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container-3 {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.container-3.divhomeperfil {
+  margin-top: 225px;
 }
 
 .submit-button {
@@ -324,10 +356,9 @@
   border: 1px solid #bebebe;
   border-radius: 50px;
   background-color: #fff;
-  background-image: url('../images/father.png');
-  background-position: 50% 50%;
-  background-size: 30px;
-  background-repeat: no-repeat;
+  background-image: none;
+  background-size: auto;
+  background-repeat: repeat;
 }
 
 .navbar-2 {
@@ -425,6 +456,7 @@
 }
 
 .field-label {
+  display: block;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
@@ -469,17 +501,23 @@
 }
 
 .form-2 {
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   padding: 10px;
+  float: none;
+  border: 1px solid #e2e2e2;
 }
 
 .field-label-4 {
-  float: left;
+  float: none;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 
 .field-label-5 {
-  float: left;
+  float: none;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
@@ -533,8 +571,18 @@
 }
 
 .image-2 {
+  width: 50px;
   border-radius: 50px;
   background-color: #fff;
+  background-image: none;
+  background-position: 0px 0px;
+  background-size: auto;
+}
+
+.image-2.imggoal {
+  background-image: none;
+  background-position: 0px 0px;
+  background-size: auto;
 }
 
 .image-3 {
@@ -564,6 +612,126 @@
 
 .text-field {
   font-family: 'Open Sans', sans-serif;
+}
+
+.image-4 {
+  margin-top: -3px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+.image-5 {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  width: 18%;
+}
+
+.image-6 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-image: url('../images/boy.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image-6.imgphone.imgperfilphone {
+  background-color: transparent;
+  background-image: none;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+.text-block-4 {
+  position: absolute;
+  left: 0px;
+  right: 51px;
+  bottom: 99px;
+  display: block;
+  width: 150px;
+  margin: 0px auto 70px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.text-block-4.my {
+  right: 184px;
+  bottom: 121px;
+  width: 150px;
+  margin-bottom: 70px;
+}
+
+.text-block-5 {
+  margin-top: 0px;
+  margin-right: 0px;
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  color: #2e997e;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.text-block-5.txtbarra {
+  margin-top: 18px;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.text-block-6 {
+  margin-bottom: 0px;
+  padding-top: 38px;
+  padding-bottom: 0px;
+  float: left;
+  color: #2e997e;
+  font-size: 25px;
+}
+
+.div-block-11 {
+  width: 60px;
+  height: 60px;
+  float: right;
+}
+
+.form-block-3 {
+  width: 32.5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  float: left;
+}
+
+.regular {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.heading-2 {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  color: #272727;
+  font-size: 30px;
+  text-align: center;
+}
+
+.image-7 {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.image-8 {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.text-block-7 {
+  margin-top: 17px;
+  margin-left: 12px;
+  font-family: 'Open Sans', sans-serif;
+  color: #2e997e;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 html.w-mod-js *[data-ix="new-interaction-2"] {
@@ -617,7 +785,24 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
   transform: translate(35px, 0px);
 }
 
+html.w-mod-js *[data-ix="nav"] {
+  opacity: 1;
+  -webkit-transform: translate(0px, -100px);
+  -ms-transform: translate(0px, -100px);
+  transform: translate(0px, -100px);
+}
+
+html.w-mod-js *[data-ix="ncontaier"] {
+  opacity: 0.45;
+  -webkit-transform: translate(0px, 100px);
+  -ms-transform: translate(0px, 100px);
+  transform: translate(0px, 100px);
+}
+
 @media (max-width: 991px) {
+  .imgpadre {
+    margin-top: 35px;
+  }
   .imghijo.hijomedio.hijo1.hijoefect {
     margin-left: 103px;
   }
@@ -629,6 +814,12 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
   }
   .imghijo.hijomedio.hjopenultimo.h4 {
     margin-right: -106px;
+  }
+  .container-3 {
+    margin-top: 20px;
+  }
+  .container-3.divhomeperfil {
+    margin-top: 235px;
   }
   .menu-button {
     display: none;
@@ -649,14 +840,32 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
     background-color: rgba(39, 39, 39, .94);
     color: hsla(0, 3%, 7%, .95);
   }
+  .text-block-4 {
+    bottom: 80px;
+  }
+  .text-block-4.my {
+    bottom: 100px;
+  }
+  .form-block-3 {
+    width: 31%;
+  }
+  .heading-2 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 767px) {
+  .imgpadre {
+    margin-top: 30px;
+  }
   .imghijo.hijomedio.hijo1.hijoefect {
     margin-left: 40px;
   }
   .imghijo.hijomedio.hijoultimo {
     margin-right: 50px;
+  }
+  .container-3 {
+    margin-top: 20px;
   }
   .div-block-6.startdate {
     width: 100%;
@@ -672,17 +881,51 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
   .text-block {
     display: block;
   }
+  .field-label-4 {
+    margin-right: 30px;
+    margin-left: 0px;
+    float: left;
+  }
   .nav-menu {
     display: block;
+  }
+  .image-6.imgphone.imgperfilphone {
+    margin-top: 0px;
+  }
+  .text-block-6 {
+    float: left;
+  }
+  .form-block-3 {
+    width: 100%;
+    float: none;
+  }
+  .regular {
+    margin-left: -5px;
+  }
+  .div-block-12 {
+    float: none;
+  }
+  .image-7 {
+    margin-right: 0px;
+    margin-left: -5px;
+  }
+  .image-8 {
+    margin-left: -5px;
   }
 }
 
 @media (max-width: 479px) {
   .imgpadre {
+    width: 200px;
+    height: 200px;
+    margin-top: 60px;
+    margin-bottom: -81px;
+    background-image: none;
+  }
+  .imgpadre.imghomeone {
     width: 100px;
     height: 100px;
-    margin-bottom: -81px;
-    background-size: 70px;
+    background-size: 60px;
   }
   .imghijo.hijomedio.hijo1.hijoefect {
     width: 50px;
@@ -720,12 +963,67 @@ html.w-mod-js *[data-ix="new-interaction-10"] {
     background-size: 40px;
   }
   .container-2 {
-    margin-top: 75px;
+    margin-top: 40px;
+  }
+  .container-3 {
+    margin-top: 50px;
+  }
+  .container-3.divhomeperfil {
+    margin-top: 186px;
+  }
+  .div-block-2 {
+    width: 190px;
+  }
+  .field-label-4 {
+    float: none;
   }
   .submit-button-2 {
     display: block;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+  .image-5 {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 27%;
+  }
+  .image-6.imgphone {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+  }
+  .image-6.imgphone.imgperfilphone {
+    width: 200px;
+    height: 200px;
+    background-image: none;
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .text-block-4 {
+    bottom: 90px;
+  }
+  .text-block-4.my {
+    bottom: 117px;
+  }
+  .regular {
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  .image-7 {
+    margin-top: -15px;
+    margin-right: 0px;
+    margin-left: -15px;
+    padding-right: 0px;
+  }
+  .image-8 {
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  .text-block-7 {
+    margin-right: 10px;
+    margin-left: 0px;
+    font-size: 15px;
   }
 }

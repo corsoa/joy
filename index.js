@@ -103,6 +103,14 @@ router.get('/fgoal', ((req, res) => {
   res.render('family-goal');
 }));
 
+router.get('/perindex', ((req, res) => {
+  res.render('homepersonal');
+}));
+
+router.get('/pergoal', ((req, res) => {
+  res.render('mygoal');
+}));
+
 app.use('/', router);
 
 app.listen(8080 , () => console.log('Example app listening on port 8080!'))
