@@ -105,6 +105,10 @@ router.get('/igoal', function(req, res) {
   res.render('goal');
 });
 
+router.get('/fgoal', ((req, res) => {
+  res.render('family-goal');
+}));
+
 app.use('/', router);
 
 app.listen(8080 , () => console.log('Example app listening on port 8080!'))
