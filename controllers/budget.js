@@ -3,6 +3,27 @@ const Joi = require('joi');
 const request = require('request');
 const Promise = require('bluebird');
 let driver;
+
+exports.setBudgetStandalone = ((body, driver) => {
+  return new Promise((resolve, reject) => {
+
+      const query = 'INSERT INTO budget(start_date, end_date, max_consume, mcc, customer_id) VALUES(?, ?, ?, ?, ?)';
+      driver.query({
+        sql: query,
+        values: [ body.start_date, body.end_date, body.max_consume, body.mcc, body.customer_id ]
+      }, ((err, results, fields) => {
+        if (!err) {
+          resolve(results);
+        }
+        else {
+          console.error(err.stack);
+          reject(err);
+        }
+      }));
+  });
+});
+
+
 /**
  * POST request
  */
@@ -21,19 +42,12 @@ exports.setBudget = ((req, res) => {
       res.status(500).send(`Failed validation: ${err.stack}`);
     }
     else {
-      const query = 'INSERT INTO budget(start_date, end_date, max_consume, mcc, customer_id) VALUES(?, ?, ?, ?, ?)';
-      req.driver.query({
-        sql: query,
-        values: [ body.start_date, body.end_date, body.max_consume, body.mcc, body.customer_id ]
-      }, ((err, results, fields) => {
-        if (!err) {
-          res.sendStatus(200);
-        }
-        else {
-          console.error(err);
-          res.status(500).send(`Query error: ${err.stack}`);
-        }
-      }));
+      exports.setBudgetStandalone(body, req.driver).then(() => {
+        res.sendStatus(200);
+      }).catch((err) => {
+        console.error(err);
+        res.status(500).send(`Query error: ${err.stack}`);
+      });
     }
   }));
 });

@@ -97,6 +97,10 @@ app.get('/budget', (req, res) => {
   controllers.budget.getBudget(req, res);
 });
 
+app.post('/objective/:customer_id', (req, res) => {
+  controllers.objective.setObjective(req, res);
+});
+
 router.get('/igoal', function(req, res) {
   res.render('goal');
 });
