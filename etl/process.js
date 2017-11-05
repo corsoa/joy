@@ -6,10 +6,10 @@ const driver = require('../drivers/mysql');
 var csvStream = csv()
     .on("data", function(data){
       console.log(typeof(data));
-      const sql = 'INSERT INTO merchants(mcc_description) VALUES(?)';
+      const sql = 'INSERT INTO merchants(mcc_description, mcc_segment) VALUES(?, ?)';
        driver.query({
           sql: sql,
-          values: [ data[0] ]
+          values: [ data[0], data[1] ]
        }, ((err, results) => {
           console.error(err);
          console.log(results);
