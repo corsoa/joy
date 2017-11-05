@@ -64,40 +64,22 @@ app.use((req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-
-    var options = { method: 'POST',
-      url: 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/accounts',
-      headers: 
-       { 'postman-token': '36e11e3b-52a1-f527-9a53-6f6446d40b85',
-         'cache-control': 'no-cache',
-         'content-type': 'application/json' },
-      body: { account_id: 100700000 },
-      json: true };
-    
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-    
-      console.log(body);
-    });
-  const renderOpts = {
-    root: 'public'
-  };
-  res.render('index', renderOpts);
+  res.render('index');
 })
 
-app.get('/authorizedUsers', (req, res) => {
-  controllers.authorizedUsers(req, res); 
+router.get('/authorized-users/:account_id', (req, res) => {
+  controllers.authorizedUsers.getAuthorizedUsers(req, res); 
 });
 
-app.post('/budget', (req, res) => {
+router.post('/budget', (req, res) => {
   controllers.budget.setBudget(req, res);
 });
 
-app.get('/budget', (req, res) => {
+router.get('/budget', (req, res) => {
   controllers.budget.getBudget(req, res);
 });
 
-app.post('/objective/:customer_id', (req, res) => {
+router.post('/objective/:customer_id', (req, res) => {
   controllers.objective.setObjective(req, res);
 });
 
