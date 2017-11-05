@@ -28,6 +28,7 @@ $.ajax({
 }
 else {
   //the index page.
+  localStorage.account_id = getParameterByName('account_id') || 100700000
   $.ajax({
     url: '/authorized-users/' + localStorage.account_id
   }).done((data) => {
@@ -65,7 +66,6 @@ function getParameterByName(name, url) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-localStorage.account_id = getParameterByName('account_id') || 100700000
 
 var generateMainProfile = (className, userName) => {
 return `<div class="mainProfileWrapper">
