@@ -3,6 +3,7 @@ if (window.location.href.indexOf('igoal') !== -1) {
     var customer_id = parseInt(getParameterByName('customer_id'));
     JSON.parse(localStorage.authorizedUsers).forEach((user) => {
       if (user.customer_id === customer_id) {
+        localStorage.customer_id = customer_id;
         $('#igoal-container').prepend(`
         <a href="#" data-ix="new-interaction-2" class="link-2 visible-link">${user.first_name}'s Goal</a>
         `);        

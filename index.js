@@ -103,11 +103,11 @@ router.get('/fgoal', ((req, res) => {
   res.render('family-goal');
 }));
 
-router.get('/perindex', ((req, res) => {
+router.get('/homepersonal', ((req, res) => {
   res.render('homepersonal');
 }));
 
-router.get('/pergoal', ((req, res) => {
+router.get('/mygoal', ((req, res) => {
   res.render('mygoal');
 }));
 
