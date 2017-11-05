@@ -25,7 +25,7 @@ exports.getAuthorizedUsers = ((req, res) => {
         }
         else {
           console.log(JSON.stringify(body, null, 4));
-          res.send(body);
+          res.send(body[0].customers);
         }
       }));
     }

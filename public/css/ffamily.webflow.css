@@ -70,6 +70,13 @@
 }
 
 .imgpadre {
+  background-image: url('../images/father.png');
+}
+.imgmadre {
+  background-image: url('../images/mother.png');
+
+}
+.imgpadre, .imgmadre {
   display: block;
   width: 200px;
   height: 200px;
@@ -78,7 +85,6 @@
   padding-bottom: 0px;
   border-radius: 100px;
   background-color: #fff;
-  background-image: url('../images/father.png');
   background-position: 50% 50%;
   background-size: 150px;
   background-repeat: no-repeat;
@@ -94,7 +100,7 @@
   transition: opacity 292ms ease;
 }
 
-.imgpadre:hover {
+.imgpadre:hover, .imgmadre:hover {
   -webkit-transform: scale(1.17);
   -ms-transform: scale(1.17);
   transform: scale(1.17);
