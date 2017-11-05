@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 
 router.get('/', (req, res) => {
   res.render('index');
-})
+});
 
 router.get('/authorized-users/:account_id', (req, res) => {
   controllers.authorizedUsers.getAuthorizedUsers(req, res); 
@@ -89,6 +89,10 @@ router.get('/merchant-categories', ((req, res) => {
 
 router.get('/list-accounts', ((req, res) => {
   controllers.accounts.listAccounts(req, res);
+}));
+
+router.get('/choose-account', ((req, res) => {
+  res.render('choose-account');
 }));
 
 router.get('/igoal', function(req, res) {

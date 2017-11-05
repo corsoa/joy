@@ -1,3 +1,14 @@
+if (window.location.href.indexOf('choose-account') !== -1) {
+$.ajax({
+  url: '/list-accounts'
+}).done((data) => {
+  data.forEach((account) => {
+    $('#list-accounts').prepend(`<a href="/?account_id=${account}">${account}</a><br />`);
+  });
+  console.log(data);
+  });
+}
+
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
