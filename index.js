@@ -97,6 +97,10 @@ app.get('/budget', (req, res) => {
   controllers.budget.getBudget(req, res);
 });
 
+router.get('/igoal', function(req, res) {
+  res.render('goal');
+});
+
 app.use('/', router);
 
 app.listen(8080 , () => console.log('Example app listening on port 8080!'))
