@@ -1,6 +1,9 @@
 .container {
   display: block;
 }
+.visible-link {
+  opacity: 100 !important;
+}
 .authUsername {
   position: relative;
   top: 50px;
