@@ -35,11 +35,19 @@ app.use((req, res, next) => {
     2: 'Amusement and Entertainment',
     3: 'Associations',
     4: 'Auto Rental',
+<<<<<<< HEAD
     5: 'Automobiles and Vehicles',
     6: 'Business Services',
     7: 'Cleaning Preparations',
     8: 'Clothing Stores',
     9: 'Contracted Services',
+=======
+    5: 'Automobiles and Vehicles', 
+    6: 'Business Services', 
+    7: 'Cleaning Preparations', 
+    8: 'Clothing Stores', 
+    9: 'Contracted Services', 
+>>>>>>> 110b69ab015fb9ee851eed1c68671ab1887aafe7
     10: 'Education',
     11: 'Gas Stations',
     12: 'Government Services',
@@ -68,16 +76,27 @@ router.get('/', (req, res) => {
 
     var options = { method: 'POST',
       url: 'https://3hkaob4gkc.execute-api.us-east-1.amazonaws.com/prod/au-hackathon/accounts',
+<<<<<<< HEAD
       headers:
+=======
+      headers: 
+>>>>>>> 110b69ab015fb9ee851eed1c68671ab1887aafe7
        { 'postman-token': '36e11e3b-52a1-f527-9a53-6f6446d40b85',
          'cache-control': 'no-cache',
          'content-type': 'application/json' },
       body: { account_id: 100700000 },
       json: true };
+<<<<<<< HEAD
 
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
 
+=======
+    
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+    
+>>>>>>> 110b69ab015fb9ee851eed1c68671ab1887aafe7
       console.log(body);
     });
   const renderOpts = {
@@ -87,7 +106,11 @@ router.get('/', (req, res) => {
 })
 
 app.get('/authorizedUsers', (req, res) => {
+<<<<<<< HEAD
   controllers.authorizedUsers(req, res);
+=======
+  controllers.authorizedUsers(req, res); 
+>>>>>>> 110b69ab015fb9ee851eed1c68671ab1887aafe7
 });
 
 app.post('/budget', (req, res) => {
@@ -100,4 +123,8 @@ app.get('/budget', (req, res) => {
 
 app.use('/', router);
 
+<<<<<<< HEAD
 app.listen(8080 , () => console.log('Example app listening on port 8080!'))
+=======
+app.listen(8080 , () => console.log('Example app listening on port 8080!'))
+>>>>>>> 110b69ab015fb9ee851eed1c68671ab1887aafe7

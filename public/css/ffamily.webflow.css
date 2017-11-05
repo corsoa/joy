@@ -1,0 +1,325 @@
+.container {
+  display: block;
+}
+
+.section {
+  height: 100vh;
+}
+
+.navbar {
+  height: 80px;
+  border-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #ccc9c9;
+  background-color: rgba(3, 3, 3, .69);
+  box-shadow: 1px 1px 3px 0 #d1cdcd;
+}
+
+.link-block {
+  display: block;
+  clear: none;
+}
+
+.div-block {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 300px;
+  height: 35px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 7px;
+  clear: none;
+  text-align: center;
+}
+
+.link {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: none;
+}
+
+.nav-link-2 {
+  display: none;
+}
+
+.nav-link-3 {
+  display: none;
+}
+
+.brand {
+  display: none;
+}
+
+.link-block-2 {
+  background-image: url('../images/bda0f5c741e04de2a3df09e8faaeec5c.jpg');
+  background-position: 0px 0px;
+  background-size: 227px;
+}
+
+.imgpadre {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto -90px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 100px;
+  background-color: #fff;
+  background-image: url('../images/father.png');
+  background-position: 50% 50%;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 3px 0 #000;
+  -webkit-perspective: 1090px;
+  perspective: 1090px;
+  -webkit-perspective-origin: 100% 50%;
+  perspective-origin: 100% 50%;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: opacity 292ms ease;
+  transition: opacity 292ms ease;
+}
+
+.imgpadre:hover {
+  -webkit-transform: scale(1.17);
+  -ms-transform: scale(1.17);
+  transform: scale(1.17);
+}
+
+.imghijo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-image: url('../images/52e2005b79b9037697ee9ff85e8fdaf7.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imghijo.hijomedio {
+  display: block;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+}
+
+.imghijo.hijomedio.hijo1 {
+  margin-top: -50px;
+  margin-left: 150px;
+}
+
+.imghijo.hijomedio.hijo1.hijoefect {
+  margin-left: 180px;
+  background-color: #fff;
+  background-image: url('../images/boy.png');
+  background-position: 50% 50%;
+  background-size: 64px;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 3px 0 #000;
+}
+
+.imghijo.hijomedio.hijo1.hijoefect:hover {
+  border: 1px none #272727;
+}
+
+.imghijo.hijomedio.hijoultimo {
+  margin-top: -60px;
+  margin-right: 190px;
+  margin-left: 48px;
+  float: right;
+  background-color: #fff;
+  background-image: url('../images/girl.png');
+  background-size: 64px;
+  box-shadow: 1px 1px 3px 0 #000;
+}
+
+.imghijo.hijomedio.hijo2 {
+  margin-top: 85px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.imghijo.hijomedio.hijo2.h2 {
+  margin-right: 0px;
+  margin-left: -20px;
+}
+
+.imghijo.hijomedio.hijo2.h2.hijoefect {
+  box-shadow: 1px 1px 3px 0 #000;
+}
+
+.imghijo.hijomedio.hijo2.h2.hijoefect.im1 {
+  background-color: #fff;
+  background-image: url('../images/girl.png');
+  background-size: 64px;
+}
+
+.imghijo.hijomedio.hjopenultimo {
+  margin-top: 56px;
+  margin-right: -48px;
+  margin-left: 0px;
+  float: right;
+}
+
+.imghijo.hijomedio.hjopenultimo.h4 {
+  margin-top: 85px;
+  margin-right: -70px;
+  background-color: #fff;
+  background-image: url('../images/boy.png');
+  background-size: 64px;
+  box-shadow: 1px 1px 3px 0 #000, 1px 1px 3px 0 #000;
+}
+
+.imghijo.hijomedio.hijomedio1 {
+  margin-top: 150px;
+  float: none;
+  box-shadow: 0 0 6px 0 #fff, 1px 1px 3px 0 #000;
+}
+
+.imghijo.hijomedio.hijomedio1.im2 {
+  background-color: #fff;
+  background-image: url('../images/boy2.png');
+  background-position: 50% 50%;
+  background-size: 64px;
+}
+
+.container-2 {
+  margin-top: 15px;
+}
+
+.form {
+  position: static;
+  left: 0px;
+  top: 0px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  clear: none;
+}
+
+.form-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  clear: none;
+}
+
+.container-3 {
+  display: block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.submit-button {
+  width: 150px;
+  border-radius: 3px;
+  background-color: #37bc9b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.submit-button:hover {
+  background-color: #2e997e;
+}
+
+.body {
+  background-image: url('../images/242.jpg');
+  background-position: 0px 0px;
+  background-size: contain;
+}
+
+@media (max-width: 991px) {
+  .imghijo.hijomedio.hijo1.hijoefect {
+    margin-left: 103px;
+  }
+  .imghijo.hijomedio.hijoultimo {
+    margin-right: 120px;
+  }
+  .imghijo.hijomedio.hijo2.h2.hijoefect {
+    margin-left: -49px;
+  }
+  .imghijo.hijomedio.hjopenultimo.h4 {
+    margin-right: -106px;
+  }
+  .menu-button {
+    display: none;
+  }
+  .container-4 {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .imghijo.hijomedio.hijo1.hijoefect {
+    margin-left: 40px;
+  }
+  .imghijo.hijomedio.hijoultimo {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 479px) {
+  .imgpadre {
+    width: 100px;
+    height: 100px;
+    margin-bottom: -81px;
+    background-size: 70px;
+  }
+  .imghijo.hijomedio.hijo1.hijoefect {
+    width: 50px;
+    height: 50px;
+    margin-top: 13px;
+    margin-left: 40px;
+    background-size: 40px;
+  }
+  .imghijo.hijomedio.hijoultimo {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 40px;
+    background-size: 40px;
+  }
+  .imghijo.hijomedio.hijo2.h2.hijoefect {
+    width: 50px;
+    height: 50px;
+    margin-left: -34px;
+  }
+  .imghijo.hijomedio.hijo2.h2.hijoefect.im1 {
+    background-size: 40px;
+  }
+  .imghijo.hijomedio.hjopenultimo.h4 {
+    width: 50px;
+    height: 50px;
+    margin-right: -70px;
+    background-size: 40px;
+  }
+  .imghijo.hijomedio.hijomedio1 {
+    width: 50px;
+    height: 50px;
+  }
+  .imghijo.hijomedio.hijomedio1.im2 {
+    background-size: 40px;
+  }
+  .container-2 {
+    margin-top: 75px;
+  }
+}
