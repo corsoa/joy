@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/corsoa/joy#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "joi": "^13.0.1",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "request": "^2.83.0"
   }
 }
