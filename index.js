@@ -101,6 +101,10 @@ app.post('/objective/:customer_id', (req, res) => {
   controllers.objective.setObjective(req, res);
 });
 
+router.get('/merchant-categories', ((req, res) => {
+  controllers.merchant.getMerchantCategories(req, res);
+}));
+
 router.get('/igoal', function(req, res) {
   res.render('goal');
 });

@@ -5,7 +5,9 @@
 	"order": [
 		"4cabaa47-909e-9296-c177-5f834dc46cc8",
 		"f463d5f4-94c6-3f31-234c-172e3430e94b",
-		"7828b6ca-af4c-2c11-c852-ffecbc5ce5ee"
+		"7828b6ca-af4c-2c11-c852-ffecbc5ce5ee",
+		"f9c6404a-a116-4ff6-4b33-89ed9412459b",
+		"39b6e141-7a90-c4c4-4fd0-a2fa5b5e78a2"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -13,6 +15,43 @@
 	"owner": "772457",
 	"public": false,
 	"requests": [
+		{
+			"id": "39b6e141-7a90-c4c4-4fd0-a2fa5b5e78a2",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/objective/101",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Set Objective",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509880411469,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"budgets\": [\n  \t{\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n\t\"max_consume\": \"100.00\",\n\t\"mcc\": \"10\"\n  \t},\n\t{\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n\t\"max_consume\": \"8.00\",\n\t\"mcc\": \"11\"\n  \t},\n\t{\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n\t\"max_consume\": \"150.00\",\n\t\"mcc\": \"12\"\n  \t}\n  ],\n  \"goal\": {\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n    \"goal_description\": \"Family Vacation 2\"\n  \t\n  }\n}"
+		},
 		{
 			"id": "4cabaa47-909e-9296-c177-5f834dc46cc8",
 			"headers": "",
@@ -103,6 +142,29 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": "{\n\t\"start_date\": \"2017-11-01 00:00:00\",\n\t\"end_date\": \"2017-11-30 00:00:00\",\n\t\"max_consume\": \"100.00\",\n\t\"mcc\": \"10\",\n\t\"customer_id\": \"101\"\n}"
+		},
+		{
+			"id": "f9c6404a-a116-4ff6-4b33-89ed9412459b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/merchant-categories",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "981cf7b0-6268-0e95-42dd-63029aa95ade",
+			"data": null,
+			"dataMode": "params",
+			"name": "Merchant Categories",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1509880394804,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		}
 	]
 }
