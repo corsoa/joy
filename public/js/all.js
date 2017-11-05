@@ -33,23 +33,27 @@ if (window.location.href.indexOf('mygoal') !== -1) {
     });
   });
 }
-else if (window.location.href.indexOf('igoal') !== -1) {
+if (window.location.href.indexOf('goal') !== -1) {
+  //igoal vs goal container
   setTimeout(() => {
-    var customer_id = parseInt(getParameterByName('customer_id'));
+    var customer_id = localStorage.customer_id || parseInt(getParameterByName('customer_id'));
+    customer_id = parseInt(customer_id);
     JSON.parse(localStorage.authorizedUsers).forEach((user) => {
       if (user.customer_id === customer_id) {
         localStorage.customer_id = customer_id;
-        $('#igoal-container').prepend(`
+        $('#goal-container').prepend(`
         <a href="#" data-ix="new-interaction-2" class="link-2 visible-link">${user.first_name}'s Goal</a>
         `);        
       }
     });
     //load the available merchant categories
+    /*
     $.ajax({
       url: '/merchant-categories'
     }).done((categories) => {
       console.log(categories);
     });
+    */
   }, 500);
 }
 else if (window.location.href.indexOf('choose-account') !== -1) {
@@ -90,6 +94,7 @@ else {
 
 function goToGoal(pos) {
   var customer_id = JSON.parse(localStorage.authorizedUsers)[pos].customer_id;
+  localStorage.customer_id = customer_id;
   window.location.href = `/igoal?customer_id=${customer_id}&account_id=${localStorage.account_id}`;
 }
 
