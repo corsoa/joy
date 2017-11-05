@@ -8,6 +8,11 @@ $.ajax({
   console.log(data);
   });
 }
+window.authorizedUsers = [];
+function goToGoal(pos) {
+  var customer_id = window.authorizedUsers[pos].customer_id;
+  window.location.href = '/igoal?customer_id=' + customer_id;
+}
 
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -54,6 +59,7 @@ var generateAuthorizedUserProfile = (gender, first_name, pos) => {
 $.ajax({
   url: '/authorized-users/' + account_id
 }).done((data) => {
+  window.authorizedUsers = data;
   data.forEach((authorizedUser, key) => {
     var userName = authorizedUser.first_name;
     if (authorizedUser.is_primary) {
