@@ -44,6 +44,7 @@
   font-size: 40px;
   font-weight: 500;
   text-decoration: none;
+  text-shadow: 1px 1px 6px #000;
 }
 
 .nav-link {
@@ -84,11 +85,11 @@
   box-shadow: 1px 1px 3px 0 #000;
   -webkit-perspective: 1090px;
   perspective: 1090px;
-  -webkit-perspective-origin: 100% 50%;
-  perspective-origin: 100% 50%;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
   -webkit-transition: opacity 292ms ease;
   transition: opacity 292ms ease;
 }
@@ -247,6 +248,262 @@
   background-size: contain;
 }
 
+.div-block-2 {
+  display: block;
+  width: 180px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  clear: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container-5 {
+  display: block;
+}
+
+.link-2 {
+  margin-top: 15px;
+  float: left;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 1px 1px 6px #000;
+}
+
+.div-block-3 {
+  width: 50px;
+  height: 50px;
+}
+
+.div-block-4 {
+  width: 50px;
+  height: 50px;
+  float: right;
+  border: 1px solid #bebebe;
+  border-radius: 50px;
+  background-color: #fff;
+  background-image: url('../images/father.png');
+  background-position: 50% 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+.navbar-2 {
+  background-color: rgba(39, 39, 39, .83);
+  color: rgba(51, 51, 51, .87);
+}
+
+.heading {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.div-block-5 {
+  margin: 10px;
+  padding: 0px;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 9px 13px 0 #585656;
+}
+
+.div-block-6 {
+  width: 50%;
+  height: 95px;
+  padding-right: 30px;
+  float: left;
+}
+
+.div-block-6.startdate {
+  width: 50%;
+}
+
+.div-block-6.startdate.enddate {
+  width: 97%;
+}
+
+.div-block-7 {
+  display: block;
+  width: 50%;
+  height: 95px;
+  margin-right: auto;
+  margin-left: auto;
+  float: right;
+}
+
+.div-block-8 {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 1px;
+  padding-left: 33px;
+  border-left: 1px none #a8a8a8;
+}
+
+.div-block-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 10px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: 0px;
+  padding-left: 0px;
+  float: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-style: none none none solid;
+  border-left-width: 1px;
+  border-left-color: #e2e2e2;
+}
+
+.paragraph {
+  font-family: 'Open Sans', sans-serif;
+  color: #a8a8a8;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.field-label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.field-label-2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.field-label-3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.button {
+  position: relative;
+  bottom: 46px;
+  display: inline-block;
+  margin-top: -6px;
+  margin-bottom: 0px;
+  float: right;
+}
+
+.form-block-2 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.text-block {
+  margin-top: 0px;
+  margin-left: 10px;
+  padding-top: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.div-block-10 {
+  height: 35px;
+  background-color: #e2e2e2;
+}
+
+.form-2 {
+  padding: 10px;
+}
+
+.field-label-4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.field-label-5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.submit-button-2 {
+  width: 150px;
+  border-radius: 3px;
+  background-color: #37bc9b;
+  color: #fff;
+}
+
+.submit-button-2:hover {
+  background-color: #2e997e;
+}
+
+.select-field {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5));
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5));
+}
+
+.select-field-2 {
+  background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5));
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, .5));
+}
+
+.html-embed {
+  display: block;
+  width: auto;
+  height: 15px;
+  margin-top: 0px;
+}
+
+.body-2 {
+  background-image: url('../images/242.jpg');
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+.nav-link-4 {
+  color: #fff;
+  text-shadow: 1px 1px 6px #000;
+}
+
+.nav-link-5 {
+  color: #fff;
+  text-shadow: 1px 1px 6px #000;
+}
+
+.image-2 {
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.image-3 {
+  width: 200px;
+  height: 200px;
+}
+
 @media (max-width: 991px) {
   .imghijo.hijomedio.hijo1.hijoefect {
     margin-left: 103px;
@@ -266,6 +523,16 @@
   .container-4 {
     display: block;
   }
+  .menu-button-2 {
+    color: #fff;
+  }
+  .menu-button-2.w--open {
+    background-color: rgba(39, 39, 39, .83);
+  }
+  .nav-menu {
+    background-color: rgba(39, 39, 39, .94);
+    color: hsla(0, 3%, 7%, .95);
+  }
 }
 
 @media (max-width: 767px) {
@@ -274,6 +541,17 @@
   }
   .imghijo.hijomedio.hijoultimo {
     margin-right: 50px;
+  }
+  .div-block-6.startdate {
+    width: 100%;
+    float: none;
+  }
+  .div-block-7 {
+    width: 100%;
+    float: none;
+  }
+  .div-block-9 {
+    display: none;
   }
 }
 
@@ -321,5 +599,11 @@
   }
   .container-2 {
     margin-top: 75px;
+  }
+  .submit-button-2 {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
